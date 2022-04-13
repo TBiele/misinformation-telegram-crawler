@@ -1,0 +1,20 @@
+Before using this tool to access the Telegram API you need to generate an API ID and an API hash (see https://core.telegram.org/api/obtaining_api_id) and add them to config.json. When accessing the Telegram API for the first time you need to verify your identity using your phone number (use your country specific prefix, e. g . +49 for Germany).
+
+How to run:
+(0. Install Python)
+1. Clone repository
+2. Add personal API ID and hash to config.json
+3. cd into directory
+4. Create virtual environment: python -m venv venv
+5. Install requirements: pip install -r requirements.txt
+6. Create tables (run models.py)
+7. Run crawler.py
+
+First run with a new set of chats:
+The crawler works most reliably when it is passed a list of chat ids. However, initially Telethon does not know what entity an id refers to. It has to be retrieved in some other way. One way to do this is to pass a list of usernames (each chat has a username) to crawler.crawl() to fetch the metadata for each chat first. Then change to a list of ids.
+
+ValueError: Could not find the input entity for PeerUser:
+Telegram chats are frequently deleted. This error indicates that you need to remove a certain chat from the list of chats to crawl. 
+
+Initialize labels:
+If you want to use someones else's labeled data, you need to have the same labels with consistent IDs in your database. Obtain the database content from the other person (e. g. exporting their tables using DBeaver) and initialize your topic and misconception tables with this data.

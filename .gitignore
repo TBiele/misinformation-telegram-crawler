@@ -1,0 +1,16 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+*checkpoint.ipynb
+*.session
+*.session-journal
+*.log
+/data
+/venv
+/models
+/notebooks/results
+/__pycache__
+.vscode/
+.flake8
+config.json
+classifier_skipped_messages.txt
